@@ -1,14 +1,27 @@
-<div class="logotype-container">
-    <span class="logotype-maintitle">damian szalimow</span>
-    <div class="logotype-subtitle-container">
-        <div class="left-line"></div>
-        <span class="logotype-subtitle">personal profile</span>
-        <div class="right-line"></div>
-    </div>
-</div>
+---
 
-<style>
+---
+<script>
+    const leftLine = document.querySelector('.left-line') as HTMLAnchorElement;
+if (sessionStorage.getItem('isVisited') == null) {
+    document.addEventListener('DOMContentLoaded', () => {
+        sessionStorage.setItem('isVisited', 'true');
+        leftLine.style.animation = 'show-line 3s linear forwards';
+    });
     
+}
+</script>
+    <div class="logotype-container">
+        <span class="logotype-maintitle">damian szalimow</span>
+        <div class="logotype-subtitle-container">
+            <div class="left-line"></div>
+            <span class="logotype-subtitle">personal profile</span>
+            <div class="right-line"></div>
+        </div>
+    </div>
+            
+            
+<style>
 .logotype-container {
     font-family: "Parkinsans", serif;
     font-optical-sizing: auto;
@@ -50,7 +63,7 @@
 }
 
 .left-line{
-    animation: show-line 3s linear forwards;
+    width: 100%;
 }
 @keyframes show-line {
       from {
