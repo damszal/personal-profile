@@ -1,0 +1,66 @@
+---
+---
+<div class="manu-container">
+    <ul class="manu">
+        <li class="manu-start">
+            <button class="btn-manu-start">
+                ogólnikowo
+            </button>
+        </li>
+        <li class="manu-proffesional-experience">
+            <button class="btn-manu-proffesional-experience-">zawodowo</button>
+        </li>
+        <li class="manu-school-courses">
+            <button class="btn-manu-school-courses">
+                edukacyjnie
+            </button>
+        </li>
+        <li class="manu-hobbies">
+            <button class="btn-manu-hobbies">
+                hobbystycznie
+            </button>
+        </li>
+        <li class="manu-contact">
+            <button class="btn-manu-contact">
+                kontaktowo
+            </button>
+        </li>
+    </ul>
+</div>
+
+<style>
+ul{
+    list-style: none;
+    margin-block-end: 0;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+    
+li{
+    padding: 10px;
+    border: 1px solid rgb(243, 243, 224);
+    margin-right: 2px;
+    font-family: "Parkinsans", serif;
+    border-radius: 2px;
+}
+
+li:hover{
+    border: 1px solid black;
+    background-color: rgba(243, 243, 224,0.9);
+    cursor: pointer;
+    border-color: black;
+}
+
+@media(max-width:600px){
+    ul{
+        flex-direction: column;
+    }
+    li{
+        margin-bottom: 2px;
+    }
+    .manu-container{
+        width: 80%;
+    }
+}
+</style>
