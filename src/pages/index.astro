@@ -1,6 +1,7 @@
 ---
-import Logotype from "../components/logotype.astro"
-import Manu from "../components/manu.astro"
+import Logotype from "../components/Logotype.astro"
+import Manu from "../components/Manu.astro"
+import ManuMobile from "../components/ManuMobile.astro"
 ---
 <html lang="en">
 	<head>
@@ -15,7 +16,14 @@ import Manu from "../components/manu.astro"
 	</head>
 	<body>
 		<Logotype></Logotype>
-		<Manu></Manu>
+		<div id="responsive-container">
+			<div id="big-component" style="display: none;">
+				<Manu></Manu>
+			</div>
+			<div id="small-component" style="display: none;">
+				<ManuMobile></ManuMobile>
+			</div>
+		  </div>
 	</body>
 </html>
 
@@ -88,3 +96,23 @@ body{
     align-items: center;
 }
 </style>
+<script>
+	const handleResize = () => {
+	  const isSmallScreen = window.innerWidth < 600;
+	  const bigComponent = document.getElementById('big-component') as HTMLElement;;
+	  const smallComponent = document.getElementById('small-component') as HTMLElement;;
+  
+	  // Przełączanie widoczności
+	  if (isSmallScreen) {
+		bigComponent.style.display = 'none';
+		smallComponent.style.display = 'block';
+	  } else {
+		bigComponent.style.display = 'block';
+		smallComponent.style.display = 'none';
+	  }
+	};
+  
+	handleResize();
+	window.addEventListener('resize', handleResize);
+  
+  </script>

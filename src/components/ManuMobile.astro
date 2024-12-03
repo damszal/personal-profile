@@ -1,0 +1,88 @@
+---
+---
+
+<div class="manu-container">
+    <details>
+        <summary>
+            <div class="manu-title">
+                <p>o mnie</p>
+            </div>
+        </summary>
+            <ul class="manu-content">
+                <li class="manu-proffesional-experience">
+                    <button class="btn-manu-proffesional-experience-">zawodowo</button>
+                </li>
+                <li class="manu-school-courses">
+                    <button class="btn-manu-school-courses">
+                        edukacyjnie
+                    </button>
+                </li>
+                <li class="manu-hobbies">
+                    <button class="btn-manu-hobbies">
+                        hobbystycznie
+                    </button>
+                </li>
+                <li class="manu-contact">
+                    <button class="btn-manu-contact">
+                        kontaktowo
+                    </button>
+                </li>
+            </ul>
+    </details>
+</div>
+
+<style>
+    *{
+        /* outline: 1px solid red; */
+    }
+
+    li{
+        list-style: none;
+        margin-bottom: 2px;
+        list-style: none;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+
+        height: 2.5rem;
+
+        padding-left: 1rem;
+        margin-bottom: 0.5rem;
+
+        font-family: "Parkinsans", serif;
+        border-radius: 2px;
+
+        border: 1px solid rgb(243, 243, 224);
+    }
+
+    li:hover{
+    border: 1px solid black;
+    background-color: rgba(243, 243, 224,0.9);
+    cursor: pointer;
+}
+    summary{
+        list-style: none;
+        width: 100%;
+        background-color: rgb(69, 97, 146);
+        height: 2.5rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer;
+
+        margin-bottom: 1rem;
+
+        border: 1px solid rgb(243, 243, 224);
+        border-radius: 2px;
+
+        text-transform: uppercase;
+    }
+    .manu-container{
+        width: 75vw;
+    }
+
+</style>
