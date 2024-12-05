@@ -1,6 +1,18 @@
 ---
----
+interface MainManuLinks{
+  occup : string,
+    hob : string,
+    edu : string,
+    con : string
+}
 
+export interface Props {
+  manuLinks : MainManuLinks
+}
+
+const {manuLinks} = Astro.props as Props
+---
+<!-- a href vs button vs li, a semantic conflict, to change in the future -->
 <div class="manu-container">
     <details>
         <summary>
@@ -9,29 +21,39 @@
             </div>
         </summary>
             <ul class="manu-content">
-                <li class="manu-general-info">
-                    <button class="btn-manu-start">
-                        ogólnikowo
-                    </button>
-                </li>
-                <li class="manu-proffesional-experience">
-                    <button class="btn-manu-proffesional-experience-">zawodowo</button>
-                </li>
-                <li class="manu-school-courses">
-                    <button class="btn-manu-school-courses">
-                        edukacyjnie
-                    </button>
-                </li>
-                <li class="manu-hobbies">
-                    <button class="btn-manu-hobbies">
-                        hobbystycznie
-                    </button>
-                </li>
-                <li class="manu-contact">
-                    <button class="btn-manu-contact">
-                        kontaktowo
-                    </button>
-                </li>
+                <a href="/" class="btn-manu-start">
+                    <li class="manu-general-info">
+                        <button class="btn-manu-start">
+                            ogólnikowo
+                        </button>
+                    </li>
+                </a>
+                <a href={manuLinks.occup}>
+                    <li class="manu-proffesional-experience">
+                        <button class="btn-manu-proffesional-experience-">zawodowo</button>
+                    </li>
+                </a>
+                <a href={manuLinks.edu}>
+                    <li class="manu-school-courses">
+                        <button class="btn-manu-school-courses">
+                            edukacyjnie
+                        </button>
+                    </li>
+                </a>
+                <a href={manuLinks.hob}>
+                    <li class="manu-hobbies">
+                        <button class="btn-manu-hobbies">
+                            hobbystycznie
+                        </button>
+                    </li>
+                </a>
+                <a href={manuLinks.con}>
+                    <li class="manu-contact">
+                        <button class="btn-manu-contact">
+                            kontaktowo
+                        </button>
+                    </li>
+                </a>
             </ul>
     </details>
 </div>
