@@ -3,6 +3,8 @@ import Logotype from "../components/Logotype.astro"
 import Manu from "../components/Manu.astro"
 import ManuMobile from "../components/ManuMobile.astro"
 
+import "../styles/global.css"
+
 const {manuLinks} = Astro.props
 ---
 
@@ -52,7 +54,7 @@ const {manuLinks} = Astro.props
   
   </script>
 
-<style is:global>
+<!-- <style is:global>
     *,
     *::before, 
     *::after {
@@ -135,4 +137,4 @@ const {manuLinks} = Astro.props
         flex-direction: column;
         align-items: center;
     }
-    </style>
+    </style> -->
