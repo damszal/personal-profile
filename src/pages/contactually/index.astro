@@ -1,8 +1,13 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro"
-
+const manuLinks = {
+	occup : "../occupationally/index.html",
+    hob : "../hobbistically/index.html",
+    edu : "../educationally/index.html",
+    con : "../contactually/index.html"
+}
 ---
-<MainLayout>
+<MainLayout manuLinks={manuLinks}>
     <p>kontakty</p>
     
 </MainLayout>

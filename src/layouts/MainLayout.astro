@@ -2,12 +2,15 @@
 import Logotype from "../components/Logotype.astro"
 import Manu from "../components/Manu.astro"
 import ManuMobile from "../components/ManuMobile.astro"
-interface Text{
-  occup : string
+interface MainManuLinks{
+  occup : string,
+    hob : string,
+    edu : string,
+    con : string
 }
 
 export interface Props {
-  manuLinks : Text
+  manuLinks : MainManuLinks
 }
 
 const {manuLinks} = Astro.props as Props

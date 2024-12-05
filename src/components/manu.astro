@@ -1,10 +1,13 @@
 ---
-interface Text{
-  occup : string
+interface MainManuLinks{
+    occup : string,
+    hob : string,
+    edu : string,
+    con : string
 }
 
 export interface Props {
-    manuLinks : Text
+    manuLinks : MainManuLinks
 }
 
 const {manuLinks} = Astro.props as Props
@@ -27,21 +30,21 @@ const {manuLinks} = Astro.props as Props
             </a>
         </li>
         <li class="manu-school-courses">
-            <a href="educationally/">
+            <a href={manuLinks.edu}>
                 <button class="btn-manu-school-courses">
                     edukacyjnie
                 </button>
             </a>
         </li>
         <li class="manu-hobbies">
-            <a href="hobbistically/">
+            <a href={manuLinks.hob}>
                 <button class="btn-manu-hobbies">
                     hobbystycznie
                 </button>
             </a>
         </li>
         <li class="manu-contact">
-            <a href="contactually/">
+            <a href={manuLinks.con}>
                 <button class="btn-manu-contact">
                     kontaktowo
                 </button>
