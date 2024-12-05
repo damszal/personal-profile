@@ -1,33 +1,14 @@
 ---
-import Logotype from "../components/Logotype.astro"
-import Manu from "../components/Manu.astro"
-import ManuMobile from "../components/ManuMobile.astro"
+import MainLayout from "../layouts/MainLayout.astro"
 import MainSection from "../components/MainSection.astro"
----
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Damian Szalimow - personal profile</title>
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Parkinsans:wght@300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+const manuLinks = {
+	occup : "occupationally/"
+}
 
-	</head>
-	<body>
-		<Logotype></Logotype>
-		<div id="responsive-container">
-			<div id="big-component" style="display: none;">
-				<Manu></Manu>
-			</div>
-			<div id="small-component" style="display: none;">
-				<ManuMobile></ManuMobile>
-			</div>
-		</div>
+---
+	<MainLayout manuLinks={manuLinks}>
 		<MainSection></MainSection>
-	</body>
-</html>
+	</MainLayout>
 
 <style is:global>
 *,
@@ -113,23 +94,3 @@ body{
     align-items: center;
 }
 </style>
-<script>
-	const handleResize = () => {
-	  const isSmallScreen = window.innerWidth < 600;
-	  const bigComponent = document.getElementById('big-component') as HTMLElement;;
-	  const smallComponent = document.getElementById('small-component') as HTMLElement;;
-  
-	  // Przełączanie widoczności
-	  if (isSmallScreen) {
-		bigComponent.style.display = 'none';
-		smallComponent.style.display = 'block';
-	  } else {
-		bigComponent.style.display = 'block';
-		smallComponent.style.display = 'none';
-	  }
-	};
-  
-	handleResize();
-	window.addEventListener('resize', handleResize);
-  
-  </script>

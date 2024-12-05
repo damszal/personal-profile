@@ -1,4 +1,13 @@
 ---
+interface Text{
+  occup : string
+}
+
+export interface Props {
+    manuLinks : Text
+}
+
+const {manuLinks} = Astro.props as Props
 ---
 <div class="manu-container">
     <div class="manu-title">
@@ -13,7 +22,7 @@
             </a>
         </li>
         <li class="manu-proffesional-experience">
-            <a href="occupationally/">
+            <a href={manuLinks.occup}>
                 <button class="btn-manu-proffesional-experience-">zawodowo</button>
             </a>
         </li>
