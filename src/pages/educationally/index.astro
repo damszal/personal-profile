@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro"
 import MainHead from "../../layouts/MainHead.astro"
+import PostSection from "../../components/PostSection.astro"
 
 const manuLinks = {
 	occup : "../occupationally/index.html",
@@ -11,6 +12,6 @@ const manuLinks = {
 ---
 <MainHead></MainHead>
 <MainLayout manuLinks={manuLinks}>
-    <p>edukacja</p>
+    <PostSection></PostSection>
     
 </MainLayout>
