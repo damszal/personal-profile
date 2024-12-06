@@ -1,0 +1,54 @@
+---
+import Basics from '../components/SEO/Basics.astro'
+import Icon from '../components/SEO/Icon.astro'
+import Fonts from '../components/SEO/Fonts.astro'
+import LinkingMeta from '../components/SEO/LinkingMeta.astro'
+import SocialGeneral from '../components/SEO/SocialGeneral.astro'
+import Twitter from '../components/SEO/Twitter.astro'
+import AppleTags from '../components/SEO/AppleTags.astro'
+import VideoTags from '../components/SEO/VideoTags.astro'
+import ThreeDAsset from '../components/SEO/ThreeDAsset.astro'
+
+interface SEO {
+    basics: boolean;
+    icon: boolean;
+    fonts: boolean;
+    linkingMeta: boolean;
+    socialGeneral: boolean;
+    twitter: boolean;
+    appleTags: boolean;
+    videoTags: boolean;
+    threeDAsset: boolean;
+    optional: boolean;
+}
+
+const seo: SEO = { 
+    basics: true,
+    icon: true,
+    fonts: true,
+    linkingMeta: true,
+    socialGeneral: true,
+    twitter: true,
+    appleTags: true,
+    videoTags: true,
+    threeDAsset: true,
+    optional: false,
+};
+---
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    {seo.basics&& <Basics></Basics>}
+    {seo.icon && <Icon></Icon>}
+    {seo.fonts && <Fonts></Fonts> }
+    {seo.linkingMeta && <LinkingMeta></LinkingMeta> }
+    {seo.socialGeneral && <SocialGeneral></SocialGeneral> }
+    {seo.twitter && <Twitter></Twitter> }
+    {seo.appleTags && <AppleTags></AppleTags> }
+    {seo.videoTags && <VideoTags></VideoTags> }
+    {seo.threeDAsset && <ThreeDAsset></ThreeDAsset> }
+seo.
+    {seo.optional&& <meta http-equiv="X-UA-Compatible" content="IE=edge" />}
+</head>

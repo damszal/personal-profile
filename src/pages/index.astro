@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro"
 import MainSection from "../components/MainSection.astro"
+import SEO from "../components/SEOmain.astro"
 const manuLinks = {
 	occup : "../occupationally/index.html",
     hob : "../hobbistically/index.html",
@@ -9,6 +10,7 @@ const manuLinks = {
 }
 
 ---
+	<SEO></SEO>
 	<MainLayout manuLinks={manuLinks}>
 		<MainSection></MainSection>
 	</MainLayout>
