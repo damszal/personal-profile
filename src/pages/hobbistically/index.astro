@@ -1,5 +1,7 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro"
+import MainHead from "../../layouts/MainHead.astro"
+
 const manuLinks = {
 	occup : "../occupationally/index.html",
     hob : "../hobbistically/index.html",
@@ -7,6 +9,7 @@ const manuLinks = {
     con : "../contactually/index.html"
 }
 ---
+<MainHead></MainHead>
 <MainLayout manuLinks={manuLinks}> 
     <p>hobby</p>
 </MainLayout>
