@@ -3,6 +3,8 @@ import MainLayout from "../layouts/MainLayout.astro"
 import PostSection from "../components/PostSection.astro"
 import MainHead from "../layouts/MainHead.astro"
 
+import { getCollection } from "astro:content"
+
 const manuLinks = {
 	occup : "../occupationally/index.html",
     hob : "../hobbistically/index.html",
@@ -10,9 +12,28 @@ const manuLinks = {
     con : "../contactually/index.html"
 }
 
+async function getBlogPosts() {
+  const posts = await getCollection('main');
+  return posts.map((entry)=>({
+	params: {slug: entry.slug},
+	props: entry
+  }));
+}
+    console.log('start')
+  const posts = await getBlogPosts();
+  console.log(posts);
+  console.log('koniec');
 ---
 	<MainHead></MainHead>
 	<MainLayout manuLinks={manuLinks}>
-		<PostSection></PostSection>
+		{posts.map(async(entry)=>{
+			const {Content} = await entry.props.render()
+			return (
+			<PostSection frontmatter = {entry.props.data.title}>
+				<Content />
+			</PostSection>
+			)
+		})}
+			
 	</MainLayout>
 
