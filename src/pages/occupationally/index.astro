@@ -20,7 +20,8 @@ async function getBlogPosts() {
   }));
 }
 
-const posts = await getBlogPosts();
+let posts = await getBlogPosts();
+posts = posts.sort((a, b) => b.props.data.data.getTime() - a.props.data.data.getTime());
 ---
 <MainHead></MainHead>
 <MainLayout manuLinks = {manuLinks}>   
