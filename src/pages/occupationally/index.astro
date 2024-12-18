@@ -3,14 +3,33 @@ import MainLayout from "../../layouts/MainLayout.astro"
 import MainHead from "../../layouts/MainHead.astro"
 import PostSection from "../../components/PostSection.astro"
 
+import { getCollection } from "astro:content"
+
 const manuLinks = {
     occup : "../occupationally/",
     hob : "../hobbistically/",
     edu : "../educationally/",
     con : "../contactually/"
 }
+
+async function getBlogPosts() {
+  const posts = await getCollection('occup');
+  return posts.map((entry)=>({
+	params: {slug: entry.slug},
+	props: entry
+  }));
+}
+
+const posts = await getBlogPosts();
 ---
 <MainHead></MainHead>
 <MainLayout manuLinks = {manuLinks}>   
-    <PostSection></PostSection>
+    {posts.map(async(entry)=>{
+        const {Content} = await entry.props.render()
+        return (
+        <PostSection frontmatter = {entry.props.data.title}>
+            <Content />
+        </PostSection>
+        )
+    })}		
 </MainLayout>

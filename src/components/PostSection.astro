@@ -1,32 +1,34 @@
 ---
 const {frontmatter} = Astro.props
 
-console.log(frontmatter)
 ---
+
+<style is:global>
+    h3{
+	font-weight: 900;
+	font-family: "Roboto", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+.post-section p {
+	padding-top: 1rem;
+	line-height: 1.5;
+
+	font-family: "Roboto", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.post-section{
+	max-width: 70vw ;
+	background-color: rgb(255, 255, 255);
+	padding: 1rem;
+	margin-top: 2rem;
+	border-radius: 5px;
+}
+</style>
+
 <div class="post-section">
     <h3>{frontmatter}</h3>
     <slot />
 </div>
-
-
-<!-- coppy from global.css -->
-<style>
-    h3{
-        font-weight: 800;
-    }
-    p{
-        padding-top: 1rem;
-        line-height: 1.5;
-
-        font-family: "Roboto", serif;
-        font-weight: 400;
-        font-style: normal;
-    }
-    .post-section{
-        max-width: 70vw ;
-        background-color: white;
-        padding: 1rem;
-        margin-top: 2rem;
-        border-radius: 5px;
-    }
-</style>
