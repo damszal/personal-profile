@@ -26,6 +26,25 @@ const {frontmatter} = Astro.props
 	margin-top: 2rem;
 	border-radius: 5px;
 }
+
+.post-section ul {
+	margin-left: 2rem;
+}
+
+.post-section ul li {
+	padding-top: 1rem;
+	line-height: 1.5;
+
+	font-family: "Roboto", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@media(max-width:600px){
+	.post-section {
+		max-width: 90vw
+	}
+}
 </style>
 
 <div class="post-section">
