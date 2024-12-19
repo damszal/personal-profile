@@ -4,6 +4,7 @@ import PostSection from "../components/PostSection.astro"
 import MainHead from "../layouts/MainHead.astro"
 
 import { getCollection } from "astro:content"
+import Footer from "../components/Footer.astro"
 
 const manuLinks = {
 	occup : "../occupationally/index.html",
@@ -34,7 +35,7 @@ async function getBlogPosts() {
 				<Content />
 			</PostSection>
 			)
-		})}
-			
+		})}		
 	</MainLayout>
+	<Footer />
 
